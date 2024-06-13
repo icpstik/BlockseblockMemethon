@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>$stik meme game</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+  <script>const global = globalThis;</script>
+
+
+  <script src='./scripts/animations.js'></script>
+  <script src='./scripts/runtime.js'></script>
+  <script src='./scripts/abbreviate.js'></script>
+  <script src='./scripts/clicks.js'> </script>
+  <script src='./scripts/autoclickers.js'></script>
+  <script src='./scripts/shown.js'></script>
+  <script src='./scripts/redirect.js'></script>
+  <script src='./scripts/reset.js'></script>
+  <script src='./scripts/load.js'></script>
+  <script src='./scripts/main.js'></script>
+
+  <script>
+    // document.getElementById('clickbutton').addEventListener('keydown', function (e) {
+    //   var key = e.keyCode || e.charCode;
+    //   if (key == 13) {
+    //     e.stopPropagation()
+    //     e.preventDefault()
+    //   }
+    // })
+
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    function colorizeString(element) {
+      const text = element.textContent;
+      element.innerHTML = ''; // Clear the original content
+
+      const useRandomColors = Math.random() > 0.5;
+
+      for (let char of text) {
+        if (char === '\n') {
+          element.appendChild(document.createElement('br'));
+        } else {
+          const span = document.createElement('span');
+          span.textContent = char;
+          //span.style.color = getRandomColor();
+          span.style.color = useRandomColors ? getRandomColor() : 'black';
+          span.classList.add('colored-char');
+          element.appendChild(span);
+        }
+      }
+    }
+
+  </script>
+</body>
+
+</html>
