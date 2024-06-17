@@ -13,3 +13,5 @@ x: https://x.com/icpstik
 tg: https://t.me/icpstik
 
 openchat: https://bit.ly/icpstik
+
+pitch deck: https://docs.google.com/presentation/d/1JdCp2bsOirJNm5UDEaQRfnTxPh84X4glIi3P7juek3Y/view
